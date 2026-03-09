@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הופעות - Colonia Rest House, Eilat</title>
+  <meta name="description" content="הבמה של קולוניה - הופעות מוזיקה חיה, ערבי DJ ואירועים תרבותיים בקצה דרום ישראל." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Lang Toggle -->
+  <div class="lang-toggle">
+    <button id="btn-he" class="active" onclick="setLang('he')">עב</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+
+  <!-- Nav -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Colonia</a>
+    <ul class="nav-links">
+      <li><a href="events.html"><span class="he">אירועים</span><span class="en">Events</span></a></li>
+      <li><a href="room.html"><span class="he">הצימר</span><span class="en">Room</span></a></li>
+      <li><a href="diving.html"><span class="he">צלילה</span><span class="en">Diving</span></a></li>
+      <li><a href="shows.html"><span class="he">הופעות</span><span class="en">Shows</span></a></li>
+      <li><a href="testimonials.html"><span class="he">המלצות</span><span class="en">Reviews</span></a></li>
+      <li><a href="index.html#booking" class="nav-cta"><span class="he">הזמנה</span><span class="en">Book</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('stage.jpg');"></div>
+    <div class="hero-overlay dark"></div>
+    <div class="hero-content">
+      <p class="eyebrow" style="color: var(--tan);">
+        <span class="he">קולוניה, אילת</span>
+        <span class="en">Colonia, Eilat</span>
+      </p>
+      <h1 class="display light">
+        <span class="he">הופעות</span>
+        <span class="en">Live Shows</span>
+      </h1>
+      <p class="body-text" style="color: var(--warm); max-width: 560px; margin: 0 auto;">
+        <span class="he">במה פתוחה תחת כיפת השמיים, עם ההרים מאחורה וים סוף מקדים</span>
+        <span class="en">An open stage beneath the sky, mountains behind, Red Sea ahead</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Numbers Strip -->
+  <div class="numbers-strip">
+    <div class="number-item">
+      <div class="number-val" data-target="500" data-suffix="+">0</div>
+      <div class="number-label">
+        <span class="he">עומדים</span>
+        <span class="en">Standing</span>
+      </div>
+    </div>
+    <div class="number-item">
+      <div class="number-val" data-target="300" data-suffix="">0</div>
+      <div class="number-label">
+        <span class="he">יושבים</span>
+        <span class="en">Seated</span>
+      </div>
+    </div>
+    <div class="number-item">
+      <div class="number-val" style="font-size: 1.4rem; font-family: var(--serif);">PA</div>
+      <div class="number-label">
+        <span class="he">מערכת מקצועית</span>
+        <span class="en">Pro Sound System</span>
+      </div>
+    </div>
+    <div class="number-item">
+      <div class="number-val" style="font-size: 1.1rem; font-family: var(--serif);">
+        <span class="he">תאורה מלאה</span>
+        <span class="en">Full Lighting</span>
+      </div>
+      <div class="number-label">
+        <span class="he">ריג תאורה מקצועי</span>
+        <span class="en">Professional Lighting Rig</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stage Section -->
+  <section class="cream" style="padding: 96px 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+        <div>
+          <p class="eyebrow">
+            <span class="he">הבמה של קולוניה</span>
+            <span class="en">The Colonia Stage</span>
+          </p>
+          <h2 class="display" style="margin: 16px 0 32px;">
+            <span class="he">הופעה ברמה אחרת</span>
+            <span class="en">Performance on Another Level</span>
+          </h2>
+          <p class="body-text" style="margin-bottom: 24px;">
+            <span class="he">לנגן בקולוניה זה לנגן מול הרי אילת בלילה. הקהל יושב מתחת לכוכבים, ריח ים סוף באוויר, והדממה של המדבר מחכה ברקע. אין מקום כזה בישראל.</span>
+            <span class="en">To perform at Colonia is to play against the Eilat mountains at night. The audience sits beneath the stars, the scent of the Red Sea in the air, the silence of the desert waiting in the wings. There is no place like this in Israel.</span>
+          </p>
+          <p class="body-text" style="margin-bottom: 40px;">
+            <span class="he">הבמה שלנו בנויה לאמנים רציניים. האקוסטיקה, התאורה, הציוד - הכל במקום. מה שחסר זה רק אתם.</span>
+            <span class="en">Our stage is built for serious artists. The acoustics, lighting, equipment - everything is in place. All that's missing is you.</span>
+          </p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <span class="feature-marker"></span>
+              <span class="he">מערכת PA מקצועית</span>
+              <span class="en">Professional PA System</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-marker"></span>
+              <span class="he">ריג תאורה מלא</span>
+              <span class="en">Full Lighting Rig</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-marker"></span>
+              <span class="he">גרין-רום לאמנים</span>
+              <span class="en">Artist Green Room</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-marker"></span>
+              <span class="he">כניסת ציוד נוחה</span>
+              <span class="en">Easy Equipment Access</span>
+            </li>
+            <li class="feature-item">
+              <span class="feature-marker"></span>
+              <span class="he">אינג'ינר סאונד זמין</span>
+              <span class="en">Sound Engineer Available</span>
+            </li>
+          </ul>
+        </div>
+        <div style="aspect-ratio: 4/5; overflow: hidden; border-radius: 2px;">
+          <img src="stage.jpg" alt="Colonia Stage" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Happens Here -->
+  <section class="warm" style="padding: 96px 0;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <p class="eyebrow">
+          <span class="he">מה קורה כאן</span>
+          <span class="en">What Happens Here</span>
+        </p>
+        <h2 class="display" style="margin-top: 16px;">
+          <span class="he">כל ערב הוא עולם</span>
+          <span class="en">Every Evening, a World</span>
+        </h2>
+      </div>
+      <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card">
+          <div class="card-num">01</div>
+          <div class="card-title">
+            <span class="he">הופעות מוזיקה חיה</span>
+            <span class="en">Live Music</span>
+          </div>
+          <div class="card-body">
+            <span class="he">מג'אז עד רוק, מפולק עד אתני - הבמה שלנו קיבלה את כולם. הרכבים קטנים ולהקות גדולות, ערבי סולו ומופעים מלאים.</span>
+            <span class="en">From jazz to rock, folk to ethnic - our stage has welcomed them all. Small ensembles and full bands, solo evenings and complete productions.</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-num">02</div>
+          <div class="card-title">
+            <span class="he">אירועי DJ</span>
+            <span class="en">DJ Nights</span>
+          </div>
+          <div class="card-body">
+            <span class="he">מערכת הסאונד שלנו מוכנה לכל סט. תחת כיפת השמיים, עם הקהל שרוקד על הדשא - אנרגיה שאי אפשר לשחזר באולם סגור.</span>
+            <span class="en">Our sound system is ready for any set. Under open skies, with the crowd dancing on the grass - energy impossible to recreate in a closed hall.</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-num">03</div>
+          <div class="card-title">
+            <span class="he">אירועים תרבותיים</span>
+            <span class="en">Cultural Events</span>
+          </div>
+          <div class="card-body">
+            <span class="he">תיאטרון, פלמנקו, ריקוד, שירה - הבמה שלנו מתאימה לכל צורת ביטוי אמנותי. המרחב הפתוח מוסיף ממד שאין לו מחיר.</span>
+            <span class="en">Theatre, flamenco, dance, spoken word - our stage suits any form of artistic expression. The open space adds a dimension beyond price.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Strip -->
+  <div class="photo-strip">
+    <img src="stage.jpg" class="strip-photo" alt="הבמה" />
+    <img src="nightgarden1.jpg" class="strip-photo" alt="גינת לילה" />
+    <img src="nightgarden3.jpg" class="strip-photo" alt="גינת לילה" />
+    <img src="night2.jpg" class="strip-photo" alt="לילה בקולוניה" />
+    <img src="garden5.jpg" class="strip-photo" alt="הגינה" />
+  </div>
+
+  <!-- For Artists Section -->
+  <section class="dark" style="padding: 96px 0;">
+    <div class="container">
+      <div style="max-width: 680px;">
+        <p class="eyebrow" style="color: var(--tan);">
+          <span class="he">לאמנים ולמפיקים</span>
+          <span class="en">For Artists and Producers</span>
+        </p>
+        <h2 class="display light" style="margin: 16px 0 32px;">
+          <span class="he">כל מה שצריך כדי להצליח</span>
+          <span class="en">Everything You Need to Succeed</span>
+        </h2>
+        <p class="body-text" style="color: var(--warm); margin-bottom: 48px;">
+          <span class="he">אנחנו מבינים מה אמן צריך. הפרטים חשובים. מגרין-רום נוח ועד אינג'ינר סאונד שיודע מה הוא עושה - דאגנו לכל הפרטים.</span>
+          <span class="en">We understand what an artist needs. Details matter. From a comfortable green room to a sound engineer who knows what they're doing - we've thought of everything.</span>
+        </p>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <span class="feature-marker"></span>
+            <span class="he">מפרט במה מקצועי - ממדים, עומק, גובה</span>
+            <span class="en">Professional stage specs - dimensions, depth, height</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-marker"></span>
+            <span class="he">גרין-רום עם שירותים ומקרר</span>
+            <span class="en">Green room with restrooms and refrigerator</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-marker"></span>
+            <span class="he">כניסה נוחה לציוד - ללא מדרגות</span>
+            <span class="en">Easy equipment loading - no stairs</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-marker"></span>
+            <span class="he">אינג'ינר סאונד בשיתוף פעולה</span>
+            <span class="en">Sound engineer in collaboration</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-marker"></span>
+            <span class="he">שותפויות הפקה לאירועים גדולים</span>
+            <span class="en">Production partnerships for large events</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Block -->
+  <section class="cream" style="padding: 96px 0;">
+    <div class="container">
+      <div class="quote-block">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">
+          <span class="he">לנגן כאן זה חוויה שאי אפשר לתאר. ההרים מאחורי הקהל, האוויר של אילת - זה קסם.</span>
+          <span class="en">Playing here is an experience that can't be described. The mountains behind the crowd, the air of Eilat - it's magic.</span>
+        </p>
+        <p class="quote-author">
+          <span class="he">רועי כהן - גיטריסט, ערב ג'אז 2024</span>
+          <span class="en">Roi Cohen - Guitarist, Jazz Evening 2024</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accordion FAQ -->
+  <section style="padding: 80px 0; background: var(--white);">
+    <div class="container" style="max-width: 720px;">
+      <div style="text-align: center; margin-bottom: 56px;">
+        <p class="eyebrow">
+          <span class="he">שאלות נפוצות</span>
+          <span class="en">FAQ</span>
+        </p>
+        <h2 class="display" style="margin-top: 16px;">
+          <span class="he">כל מה שרציתם לדעת</span>
+          <span class="en">Everything You Wanted to Know</span>
+        </h2>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span class="he">מהו גודל הבמה?</span>
+            <span class="en">What is the stage size?</span>
+            <span class="accordion-arrow">+</span>
+          </button>
+          <div class="accordion-body">
+            <p class="body-text">
+              <span class="he">הבמה מקצועית ומתאימה לחבורות קטנות ועד להרכבים גדולים. ניתן להתאים את הפריסה לצרכי כל הופעה - מסולו אקוסטי ועד להרכב מלא עם סקשן קצב.</span>
+              <span class="en">The stage is professional and accommodates small groups through large ensembles. The layout can be adapted to the needs of each performance - from acoustic solo to a full band with rhythm section.</span>
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span class="he">האם יש מערכת סאונד?</span>
+            <span class="en">Is there a sound system?</span>
+            <span class="accordion-arrow">+</span>
+          </button>
+          <div class="accordion-body">
+            <p class="body-text">
+              <span class="he">כן. יש מערכת PA מקצועית מותקנת, ואינג'ינר סאונד זמין לפי בקשה. אנחנו ממליצים לתאם מראש את הצרכים הטכניים של ההופעה.</span>
+              <span class="en">Yes. A professional PA system is installed, and a sound engineer is available upon request. We recommend coordinating the technical requirements of the show in advance.</span>
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span class="he">איך מזמינים הופעה?</span>
+            <span class="en">How do you book a show?</span>
+            <span class="accordion-arrow">+</span>
+          </button>
+          <div class="accordion-body">
+            <p class="body-text">
+              <span class="he">יצירת קשר ישירה - צרו איתנו קשר דרך הטופס באתר או בוואטסאפ. נשמח לשמוע על הפרויקט שלכם ולתכנן יחד את הערב המושלם.</span>
+              <span class="en">Direct contact - reach us through the site form or via WhatsApp. We'd love to hear about your project and plan the perfect evening together.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="dark" style="padding: 96px 0; text-align: center;">
+    <div class="container">
+      <p class="eyebrow" style="color: var(--tan);">
+        <span class="he">מוכנים?</span>
+        <span class="en">Ready?</span>
+      </p>
+      <h2 class="display light" style="margin: 16px 0 32px;">
+        <span class="he">הביאו את האמנות לקולוניה</span>
+        <span class="en">Bring Your Art to Colonia</span>
+      </h2>
+      <p class="body-text" style="color: var(--warm); max-width: 520px; margin: 0 auto 48px;">
+        <span class="he">הבמה ממתינה. הקהל ממתין. הלילה של אילת ממתין. כל שנדרש הוא שאתם תגיעו.</span>
+        <span class="en">The stage is waiting. The audience is waiting. The Eilat night is waiting. All it takes is for you to arrive.</span>
+      </p>
+      <a href="index.html#booking" class="btn btn-solid">
+        <span class="he">צרו קשר</span>
+        <span class="en">Get in Touch</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span>© 2025 Colonia Rest House, Eilat</span>
+    <span><a href="index.html">coloniaeilat.com</a></span>
+    <span class="he">השטח הפרטי הדרומי ביותר בישראל</span>
+    <span class="en">Israel's Southernmost Private Land</span>
+  </footer>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta">
+    <a href="index.html#booking" class="btn btn-solid">
+      <span class="he">צרו קשר</span>
+      <span class="en">Get in Touch</span>
+    </a>
+  </div>
+
+  <script>
+    // Lang toggle
+    function setLang(l) {
+      document.body.classList.toggle('lang-en', l==='en');
+      document.getElementById('btn-he').classList.toggle('active', l==='he');
+      document.getElementById('btn-en').classList.toggle('active', l==='en');
+      document.documentElement.setAttribute('dir', l==='en' ? 'ltr' : 'rtl');
+      document.documentElement.setAttribute('lang', l);
+    }
+    // Scrolled nav
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+      // Sticky CTA
+      const cta = document.querySelector('.sticky-cta');
+      if (cta) cta.classList.toggle('visible', window.scrollY > 200);
+    });
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+    // Feature list animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.feature-item').forEach(el => observer.observe(el));
+    // Number counters
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          const suffix = el.dataset.suffix || '';
+          let current = 0;
+          const step = target / 50;
+          const timer = setInterval(() => {
+            current = Math.min(current + step, target);
+            el.textContent = Math.round(current) + suffix;
+            if (current >= target) clearInterval(timer);
+          }, 30);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-target]').forEach(el => countObserver.observe(el));
+    // Accordion
+    document.querySelectorAll('.accordion-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const body = item.querySelector('.accordion-body');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.accordion-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.accordion-body').style.maxHeight = '0';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+    // Drag scroll for photo strip
+    document.querySelectorAll('.photo-strip').forEach(el => {
+      let isDown = false, startX, scrollLeft;
+      el.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft; });
+      el.addEventListener('mouseleave', () => isDown = false);
+      el.addEventListener('mouseup', () => isDown = false);
+      el.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); const x = e.pageX - el.offsetLeft; el.scrollLeft = scrollLeft - (x - startX); });
+    });
+    // Hero bg pan
+    const heroBg = document.querySelector('.hero-bg');
+    if (heroBg) { window.addEventListener('load', () => heroBg.classList.add('loaded')); }
+  </script>
+</body>
+</html>
