@@ -36,6 +36,23 @@
       color: var(--earth);
       overflow-x: hidden;
       font-weight: 300;
+      width: 100%;
+      max-width: 100vw;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    section, .intro-strip, footer {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
     }
 
     /* LANG */
@@ -530,21 +547,30 @@
       nav { padding: 16px 20px; }
       nav.scrolled { padding: 14px 20px; }
       .nav-links { display: none; }
-      .hero-content { padding: 0 24px 56px; }
+      .lang-switch { top: 16px; left: 16px; }
+      .hero-content { padding: 0 20px 56px; }
       .hero-scroll { display: none; }
-      .intro-strip { flex-wrap: wrap; gap: 24px; padding: 20px; }
-      .strip-item { border: none; padding: 0; }
-      section { padding: 72px 20px; }
-      .about-grid, .room-grid, .booking-grid, .location-grid { grid-template-columns: 1fr; gap: 40px; }
-      .about-img { height: 360px; }
+      .intro-strip { flex-wrap: wrap; gap: 20px; padding: 24px 20px; }
+      .strip-item { border: none; padding: 0; flex: 1 1 40%; }
+      section { padding: 64px 20px; }
+      .gallery { padding: 64px 0; }
+      .gallery .container { padding: 0 20px; }
+      .about-grid, .room-grid, .booking-grid, .location-grid { grid-template-columns: 1fr; gap: 36px; }
+      .about-img { height: 300px; }
+      .about-img-main { width: 100%; }
       .about-img-accent { display: none; }
-      .offerings-grid { grid-template-columns: 1fr 1fr; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
+      .offerings-grid { grid-template-columns: 1fr; gap: 1px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; gap: 2px; }
       .g-item.tall { grid-row: span 1; }
-      .g-item.wide { grid-column: span 1; }
+      .g-item.wide { grid-column: span 2; }
+      .gallery-header { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .room-images { grid-template-rows: 220px 140px; }
       .contact-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px 20px; }
-      .divider { margin: 0 20px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px 20px; }
+      .divider { margin: 0; }
+      .booking-grid { gap: 32px; }
+      .form-row { grid-template-columns: 1fr; gap: 12px; }
+      .location-img { height: 260px; }
     }
 
     /* LANG */
