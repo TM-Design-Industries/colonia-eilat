@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -21,7 +21,8 @@
     img { max-width: 100%; }
 
     /* LANG */
-    .lang-switch { position: fixed; top: 20px; left: 24px; z-index: 1000; display: flex; gap: 4px; }
+    .lang-switch { position: fixed; top: 20px; left: 24px; right: auto; z-index: 1000; display: flex; gap: 4px; }
+    body.lang-en .lang-switch { left: auto; right: 24px; }
     .lang-btn { background: rgba(245,241,235,0.7); border: 1px solid var(--sand); color: var(--brown); border-radius: 3px; padding: 5px 12px; font-size: 11px; font-weight: 500; cursor: pointer; letter-spacing: 1px; font-family: 'Heebo', sans-serif; transition: all 0.2s; }
     .lang-btn.active, .lang-btn:hover { background: var(--earth); color: var(--cream); border-color: var(--earth); }
 
@@ -159,7 +160,8 @@
       nav { padding: 16px 20px; }
       nav.scrolled { padding: 14px 20px; }
       .nav-links { display: none; }
-      .lang-switch { top: 16px; left: 16px; }
+      .lang-switch { top: 16px; left: 16px; right: auto; }
+      body.lang-en .lang-switch { left: auto; right: 16px; }
       .hero-content { padding: 0 20px 56px; }
       section { padding: 64px 20px; }
       .stats-strip { padding: 48px 20px; }
@@ -546,3 +548,4 @@
   </script>
 </body>
 </html>
+

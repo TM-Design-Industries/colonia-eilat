@@ -57,8 +57,13 @@
 
     /* LANG */
     .lang-switch {
-      position: fixed; top: 20px; left: 24px;
+      position: fixed; top: 20px;
+      left: 24px; right: auto;
       z-index: 1000; display: flex; gap: 4px;
+      transition: left 0.3s, right 0.3s;
+    }
+    body.lang-en .lang-switch {
+      left: auto; right: 24px;
     }
     .lang-btn {
       background: rgba(245,241,235,0.7);
@@ -572,7 +577,8 @@
       nav { padding: 16px 20px; }
       nav.scrolled { padding: 14px 20px; }
       .nav-links { display: none; }
-      .lang-switch { top: 16px; left: 16px; }
+      .lang-switch { top: 16px; left: 16px; right: auto; }
+      body.lang-en .lang-switch { left: auto; right: 16px; }
       .hero-content { padding: 0 20px 56px; }
       .hero-scroll { display: none; }
       .intro-strip { flex-wrap: wrap; gap: 20px; padding: 24px 20px; }
@@ -991,4 +997,5 @@
   </script>
 </body>
 </html>
+
 
