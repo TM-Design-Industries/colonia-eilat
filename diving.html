@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>מועדון הצלילה | Colonia Rest House Eilat</title>
+  <meta name="description" content="מועדון הצלילה של קולוניה אילת — צלילה בים סוף, אחד מאתרי הצלילה הטובים בעולם. קורסים, השכרת ציוד, צלילות מודרכות." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #EDE8DF; --warm: #E2D8C8; --sand: #D4C4A4; --tan: #C8A882;
+      --brown: #C07848; --deep: #B86030; --earth: #6A5048; --rust: #B06838;
+      --rust2: #C87848; --dark: #524038; --white: #F5F1EB;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Heebo', sans-serif; background: var(--white); color: var(--earth); overflow-x: hidden; font-weight: 300; }
+    html, body { margin: 0; padding: 0; overflow-x: hidden; }
+    section, footer { width: 100%; overflow-x: hidden; }
+    img { max-width: 100%; }
+
+    /* LANG */
+    .lang-switch { position: fixed; top: 20px; left: 24px; z-index: 1000; display: flex; gap: 4px; }
+    .lang-btn { background: rgba(245,241,235,0.7); border: 1px solid var(--sand); color: var(--brown); border-radius: 3px; padding: 5px 12px; font-size: 11px; font-weight: 500; cursor: pointer; letter-spacing: 1px; font-family: 'Heebo', sans-serif; transition: all 0.2s; }
+    .lang-btn.active, .lang-btn:hover { background: var(--earth); color: var(--cream); border-color: var(--earth); }
+
+    /* NAV */
+    nav { position: fixed; top: 0; width: 100%; z-index: 900; padding: 22px 48px; display: flex; align-items: center; justify-content: space-between; transition: all 0.4s; }
+    nav.scrolled { background: rgba(250,250,248,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--warm); padding: 16px 48px; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--earth); letter-spacing: 6px; text-decoration: none; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--brown); text-decoration: none; font-size: 12px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--earth); }
+    .nav-cta { border: 1px solid var(--tan) !important; padding: 8px 20px; border-radius: 2px; color: var(--earth) !important; }
+    .nav-cta:hover { background: var(--earth) !important; border-color: var(--earth) !important; color: var(--cream) !important; }
+
+    /* HERO */
+    .hero { height: 100vh; min-height: 700px; position: relative; display: flex; align-items: flex-end; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: url('garden4.jpg') center 50% / cover no-repeat; }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(40,60,70,0.55); }
+    .hero-content { position: relative; z-index: 2; padding: 0 64px 72px; color: var(--white); width: 100%; }
+    .hero-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--tan); margin-bottom: 16px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 8vw, 88px); font-weight: 300; line-height: 0.95; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 20px; color: var(--white); }
+    .hero h1 em { font-style: italic; font-weight: 300; display: block; font-size: 0.5em; letter-spacing: 12px; opacity: 0.65; margin-top: 8px; }
+    .hero-desc { font-size: 14px; font-weight: 300; color: rgba(244,239,232,0.7); letter-spacing: 1px; line-height: 1.7; max-width: 480px; margin-bottom: 36px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* BUTTONS */
+    .btn-primary { background: transparent; color: var(--earth); border: 1px solid var(--tan); padding: 13px 32px; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.25s; display: inline-block; font-family: 'Heebo', sans-serif; border-radius: 2px; }
+    .btn-primary:hover { background: var(--earth); color: var(--cream); border-color: var(--earth); }
+    .btn-primary.filled { background: var(--rust); border-color: var(--rust); color: var(--white); }
+    .btn-primary.filled:hover { background: var(--rust2); border-color: var(--rust2); }
+    .btn-light { background: transparent; color: rgba(244,239,232,0.8); border: 1px solid rgba(244,239,232,0.3); padding: 13px 32px; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.25s; display: inline-block; font-family: 'Heebo', sans-serif; border-radius: 2px; }
+    .btn-light:hover { background: rgba(244,239,232,0.1); }
+    .btn-dark { background: var(--earth); color: var(--cream); border: 1px solid var(--earth); padding: 13px 32px; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.25s; display: inline-block; font-family: 'Heebo', sans-serif; border-radius: 2px; }
+    .btn-dark:hover { background: var(--rust); border-color: var(--rust); }
+
+    /* SECTIONS */
+    section { padding: 100px 48px; }
+    .container { max-width: 1140px; margin: 0 auto; }
+    .section-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
+    .section-eyebrow.light { color: var(--tan); }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 300; line-height: 1.1; margin-bottom: 20px; color: var(--earth); }
+    .section-title.light { color: var(--cream); }
+    .section-title em { font-style: italic; }
+    .section-body { font-size: 15px; line-height: 1.85; color: var(--brown); font-weight: 300; max-width: 560px; }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: var(--warm); margin: 0 48px; }
+
+    /* STATS */
+    .stats-strip { background: var(--dark); padding: 56px 48px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; background: rgba(255,255,255,0.06); }
+    .stat-card { background: var(--dark); padding: 40px 28px; text-align: center; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px,6vw,64px); font-weight: 300; color: var(--cream); letter-spacing: 2px; display: block; line-height: 1; }
+    .stat-label { font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: rgba(244,239,232,0.35); margin-top: 10px; display: block; }
+
+    /* OFFERINGS */
+    .offerings { background: var(--cream); }
+    .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 0; }
+    .offer-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .offer-item { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--warm); }
+    .offer-item:last-child { border-bottom: none; }
+    .offer-check { width: 22px; height: 22px; border-radius: 50%; background: var(--rust); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .offer-check svg { width: 10px; height: 10px; stroke: var(--white); stroke-width: 2.5; fill: none; }
+    .offer-text strong { display: block; font-size: 14px; font-weight: 500; color: var(--earth); margin-bottom: 3px; }
+    .offer-text span { font-size: 12px; color: var(--brown); font-weight: 300; }
+    .offerings-img { height: 460px; overflow: hidden; }
+    .offerings-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* DIVE SITES */
+    .dive-sites { background: var(--warm); }
+    .sites-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; background: var(--sand); margin-top: 48px; }
+    .site-card { background: var(--warm); padding: 36px 24px; transition: background 0.3s; }
+    .site-card:hover { background: var(--earth); }
+    .site-num { font-family: 'Cormorant Garamond', serif; font-size: 11px; color: var(--rust); letter-spacing: 2px; display: block; margin-bottom: 14px; }
+    .site-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--earth); line-height: 1.2; margin-bottom: 10px; transition: color 0.3s; }
+    .site-card:hover .site-name { color: var(--cream); }
+    .site-desc { font-size: 12px; color: var(--brown); font-weight: 300; line-height: 1.6; transition: color 0.3s; }
+    .site-card:hover .site-desc { color: rgba(244,239,232,0.5); }
+
+    /* LEVELS */
+    .levels { background: var(--earth); }
+    .levels-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(255,255,255,0.08); margin-top: 52px; }
+    .level-card { background: var(--earth); padding: 48px 32px; transition: background 0.3s; position: relative; }
+    .level-card:hover { background: var(--deep); }
+    .level-tag { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--rust2); display: block; margin-bottom: 20px; }
+    .level-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--cream); margin-bottom: 16px; line-height: 1.1; }
+    .level-body { font-size: 13px; color: rgba(244,239,232,0.5); line-height: 1.8; font-weight: 300; margin-bottom: 24px; }
+    .level-includes { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .level-includes li { font-size: 12px; color: rgba(244,239,232,0.4); font-weight: 300; display: flex; align-items: center; gap: 10px; }
+    .level-includes li::before { content: ''; width: 14px; height: 1px; background: var(--rust2); flex-shrink: 0; }
+
+    /* WHY HERE */
+    .why-here { background: var(--cream); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .why-img { height: 440px; overflow: hidden; }
+    .why-img img { width: 100%; height: 100%; object-fit: cover; }
+    .why-list { list-style: none; display: flex; flex-direction: column; gap: 24px; margin-top: 32px; }
+    .why-item { display: flex; gap: 20px; align-items: flex-start; }
+    .why-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--rust); letter-spacing: 1px; flex-shrink: 0; min-width: 22px; margin-top: 2px; }
+    .why-text strong { display: block; font-size: 14px; font-weight: 500; color: var(--earth); margin-bottom: 4px; }
+    .why-text span { font-size: 12px; color: var(--brown); font-weight: 300; }
+
+    /* SEASON */
+    .season { background: var(--dark); padding: 80px 48px; }
+    .season-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+    .season-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.06); margin-top: 40px; }
+    .season-card { background: var(--dark); padding: 32px 20px; text-align: center; }
+    .season-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(244,239,232,0.3); display: block; margin-bottom: 12px; }
+    .season-val { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--cream); }
+
+    /* BOOKING CTA */
+    .booking-cta { background: var(--warm); padding: 80px 48px; text-align: center; }
+    .booking-inner { max-width: 560px; margin: 0 auto; }
+
+    /* FAQ */
+    .faq { background: var(--white); }
+    .faq-list { margin-top: 48px; max-width: 720px; }
+    .faq-item { border-bottom: 1px solid var(--warm); }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; cursor: pointer; font-size: 15px; font-weight: 400; color: var(--earth); letter-spacing: 0.3px; gap: 20px; }
+    .faq-q span { flex: 1; }
+    .faq-icon { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--sand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s; color: var(--rust); font-size: 16px; }
+    .faq-item.open .faq-icon { background: var(--earth); border-color: var(--earth); color: var(--cream); transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-a { max-height: 200px; }
+    .faq-a-inner { padding: 0 0 20px; font-size: 14px; color: var(--brown); line-height: 1.85; font-weight: 300; max-width: 600px; }
+
+    /* STICKY CTA */
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 800; padding: 14px 20px; background: var(--earth); display: none; justify-content: center; border-top: 1px solid rgba(255,255,255,0.1); }
+    .sticky-cta a { color: var(--cream); text-decoration: none; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; font-family: 'Heebo', sans-serif; }
+    .sticky-cta.show { display: flex; }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.25); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; font-size: 11px; letter-spacing: 1px; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    footer a:hover { color: var(--cream); }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      nav { padding: 16px 20px; } nav.scrolled { padding: 14px 20px; } .nav-links { display: none; }
+      .lang-switch { top: 16px; left: 16px; }
+      .hero-content { padding: 0 20px 56px; }
+      section { padding: 64px 20px; }
+      .stats-strip { padding: 48px 20px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .offer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .offerings-img { height: 240px; }
+      .sites-grid { grid-template-columns: 1fr 1fr; }
+      .levels-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; gap: 36px; }
+      .why-img { height: 240px; }
+      .season { padding: 60px 20px; }
+      .season-grid { grid-template-columns: 1fr; }
+      .booking-cta { padding: 60px 20px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px 20px; }
+      .divider { margin: 0; }
+    }
+
+    /* LANG */
+    .he { display: block; } .en { display: none; }
+    body.lang-en .he { display: none; } body.lang-en .en { display: block; }
+    body.lang-en { direction: ltr; }
+    span.he { display: inline; } span.en { display: none; }
+    body.lang-en span.he { display: none; } body.lang-en span.en { display: inline; }
+  </style>
+</head>
+<body>
+
+  <div class="lang-switch">
+    <button class="lang-btn active" id="btn-he" onclick="setLang('he')">HE</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Colonia</a>
+    <ul class="nav-links">
+      <li><a href="events.html"><span class="he">גן האירועים</span><span class="en">Events Garden</span></a></li>
+      <li><a href="shows.html"><span class="he">הופעות</span><span class="en">Shows</span></a></li>
+      <li><a href="room.html"><span class="he">הצימר</span><span class="en">The Room</span></a></li>
+      <li><a href="diving.html"><span class="he">צלילה</span><span class="en">Diving</span></a></li>
+      <li><a href="#booking-cta" class="nav-cta"><span class="he">הזמנה</span><span class="en">Book</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home" style="padding:0;">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow"><span class="he">ים סוף — אחד מחמשת אתרי הצלילה הטובים בעולם</span><span class="en">The Red Sea — one of the world's top 5 dive sites</span></p>
+      <h1>
+        <span class="he">מועדון הצלילה</span><span class="en">Dive Club</span>
+        <em><span class="he">Dive Club</span><span class="en">מועדון הצלילה</span></em>
+      </h1>
+      <p class="hero-desc">
+        <span class="he">צלילה בנקודה הדרומית ביותר של ישראל. פחות עומסים, אתרים בלעדיים, וגישה לים המצרי דרך טאבה.</span>
+        <span class="en">Diving from Israel's southernmost point. Less crowds, exclusive sites, and access to Egyptian waters via Taba.</span>
+      </p>
+      <div class="hero-btns">
+        <a href="#booking-cta" class="btn-primary filled"><span class="he">הזמן צלילה</span><span class="en">Book a Dive</span></a>
+        <a href="#offerings" class="btn-light"><span class="he">מה אנחנו מציעים</span><span class="en">What We Offer</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num" data-target="1200" data-suffix="+">0</span>
+          <span class="stat-label"><span class="he">מינים של דגים</span><span class="en">Fish Species</span></span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="250">0</span>
+          <span class="stat-label"><span class="he">מינים של אלמוגים</span><span class="en">Coral Species</span></span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="30" data-suffix="m">0</span>
+          <span class="stat-label"><span class="he">ראות מקסימלית</span><span class="en">Max Visibility</span></span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="28" data-suffix="°C">0</span>
+          <span class="stat-label"><span class="he">טמפרטורת המים</span><span class="en">Water Temperature</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFERINGS -->
+  <section class="offerings" id="offerings">
+    <div class="container">
+      <p class="section-eyebrow"><span class="he">מה אנחנו מציעים</span><span class="en">What We Offer</span></p>
+      <h2 class="section-title"><span class="he">הכל לחוויית <em>צלילה מושלמת</em></span><span class="en">Everything for a <em>Perfect Dive Experience</em></span></h2>
+      <div class="offer-grid" style="margin-top:56px;">
+        <ul class="offer-list">
+          <li class="offer-item">
+            <div class="offer-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="offer-text"><strong><span class="he">צלילות מודרכות</span><span class="en">Guided Dives</span></strong><span class="he">מדריכים מנוסים שמכירים כל אתר בפנים ובחוץ</span><span class="en">Experienced guides who know every site inside out</span></div>
+          </li>
+          <li class="offer-item">
+            <div class="offer-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="offer-text"><strong><span class="he">השכרת ציוד</span><span class="en">Equipment Rental</span></strong><span class="he">ציוד צלילה מלא ומתוחזק</span><span class="en">Full, well-maintained diving equipment</span></div>
+          </li>
+          <li class="offer-item">
+            <div class="offer-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="offer-text"><strong><span class="he">קורסים למתחילים (PADI)</span><span class="en">Beginner Courses (PADI)</span></strong><span class="he">הכשרה מקצועית עם תעודת PADI בינלאומית</span><span class="en">Professional training with international PADI certification</span></div>
+          </li>
+          <li class="offer-item">
+            <div class="offer-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="offer-text"><strong><span class="he">צלילות לילה</span><span class="en">Night Dives</span></strong><span class="he">הים בלילה — חוויה שלא ניתן לשכוח</span><span class="en">The sea at night — an experience you won't forget</span></div>
+          </li>
+          <li class="offer-item">
+            <div class="offer-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="offer-text"><strong><span class="he">צלילות מתקדמות</span><span class="en">Advanced Dives</span></strong><span class="he">צלילות עמוקות לצוללנים מוסמכים</span><span class="en">Deep dives for certified divers</span></div>
+          </li>
+          <li class="offer-item">
+            <div class="offer-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="offer-text"><strong><span class="he">סיורי שנרקל</span><span class="en">Snorkeling Tours</span></strong><span class="he">לחוות את הריף גם ללא ציוד צלילה מלא</span><span class="en">Experience the reef without full diving equipment</span></div>
+          </li>
+        </ul>
+        <div class="offerings-img">
+          <img src="garden4.jpg" alt="Red Sea view" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- DIVE SITES -->
+  <section class="dive-sites">
+    <div class="container">
+      <p class="section-eyebrow"><span class="he">אתרי צלילה</span><span class="en">Dive Sites</span></p>
+      <h2 class="section-title"><span class="he">האתרים <em>הטובים ביותר</em></span><span class="en">The <em>Best Sites</em></span></h2>
+      <div class="sites-grid">
+        <div class="site-card">
+          <span class="site-num">01</span>
+          <div class="site-name"><span class="he">הגן היפני</span><span class="en">Japanese Garden</span></div>
+          <p class="site-desc"><span class="he">ריף אלמוגים עשיר עם מגוון דגים צבעוניים ומינים נדירים</span><span class="en">Rich coral reef with diverse colorful fish and rare species</span></p>
+        </div>
+        <div class="site-card">
+          <span class="site-num">02</span>
+          <div class="site-name"><span class="he">משה רוק</span><span class="en">Moses Rock</span></div>
+          <p class="site-desc"><span class="he">תצורות סלע דרמטיות וחיים ימיים ייחודיים</span><span class="en">Dramatic rock formations and unique marine life</span></p>
+        </div>
+        <div class="site-card">
+          <span class="site-num">03</span>
+          <div class="site-name"><span class="he">שמורת חוף האלמוגים</span><span class="en">Coral Beach Reserve</span></div>
+          <p class="site-desc"><span class="he">שמורת טבע מוגנת עם אלמוגים בריאים ומגוון מרהיב</span><span class="en">Protected nature reserve with healthy corals and stunning diversity</span></p>
+        </div>
+        <div class="site-card">
+          <span class="site-num">04</span>
+          <div class="site-name"><span class="he">אתרי טאבה</span><span class="en">Taba Sites</span></div>
+          <p class="site-desc"><span class="he">5 דקות נסיעה — גישה בלעדית לאתרי הים האדום המצרי</span><span class="en">5 min drive — exclusive access to Egyptian Red Sea sites</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEVELS -->
+  <section class="levels">
+    <div class="container">
+      <p class="section-eyebrow light"><span class="he">רמות ניסיון</span><span class="en">Experience Levels</span></p>
+      <h2 class="section-title light"><span class="he">לכל צולל <em>את הצלילה שלו</em></span><span class="en">For Every Diver <em>Their Dive</em></span></h2>
+      <div class="levels-grid">
+        <div class="level-card">
+          <span class="level-tag"><span class="he">מתחילים</span><span class="en">Beginners</span></span>
+          <div class="level-title"><span class="he">חוויית הצלילה הראשונה</span><span class="en">First Dive Experience</span></div>
+          <p class="level-body"><span class="he">מעולם לא צללתם? המדריכים שלנו ייקחו אתכם לים סוף בבטחה ובהנאה מיום ראשון.</span><span class="en">Never dived before? Our guides will take you into the Red Sea safely and joyfully from day one.</span></p>
+          <ul class="level-includes">
+            <li><span class="he">ציוד כלול</span><span class="en">Equipment included</span></li>
+            <li><span class="he">הדרכה אישית</span><span class="en">Personal instruction</span></li>
+            <li><span class="he">צלילה מלווה בכל עת</span><span class="en">Escorted dive at all times</span></li>
+          </ul>
+        </div>
+        <div class="level-card">
+          <span class="level-tag"><span class="he">מוסמכים</span><span class="en">Certified</span></span>
+          <div class="level-title"><span class="he">צוללנים מוסמכים</span><span class="en">Certified Divers</span></div>
+          <p class="level-body"><span class="he">כבר יש לכם תעודה? בואו לגלות את האתרים הפחות ידועים ומגוון האלמוגים הייחודי.</span><span class="en">Already certified? Come discover the lesser-known sites and unique coral diversity.</span></p>
+          <ul class="level-includes">
+            <li><span class="he">אתרי צלילה מגוונים</span><span class="en">Varied dive sites</span></li>
+            <li><span class="he">השכרת ציוד</span><span class="en">Equipment rental</span></li>
+            <li><span class="he">מדריך אופציונלי</span><span class="en">Optional guide</span></li>
+          </ul>
+        </div>
+        <div class="level-card">
+          <span class="level-tag"><span class="he">מתקדמים</span><span class="en">Advanced</span></span>
+          <div class="level-title"><span class="he">צלילות עמוקות ולילה</span><span class="en">Deep &amp; Night Dives</span></div>
+          <p class="level-body"><span class="he">לצוללנים מנוסים שמחפשים את האתגר הבא — צלילות עומק, לילה, ואתרי טאבה הבלעדיים.</span><span class="en">For experienced divers seeking the next challenge — deep dives, night dives, and exclusive Taba sites.</span></p>
+          <ul class="level-includes">
+            <li><span class="he">צלילות לילה</span><span class="en">Night dives</span></li>
+            <li><span class="he">אתרי עומק בלעדיים</span><span class="en">Exclusive deep sites</span></li>
+            <li><span class="he">גישה לים המצרי</span><span class="en">Access to Egyptian waters</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY HERE -->
+  <section class="why-here">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-img">
+          <img src="garden5.jpg" alt="Red Sea coast" />
+        </div>
+        <div>
+          <p class="section-eyebrow"><span class="he">למה לצלול דווקא כאן</span><span class="en">Why Dive Here Specifically</span></p>
+          <h2 class="section-title"><span class="he">הנקודה הדרומית <em>ביותר</em></span><span class="en">The <em>Southernmost</em> Point</span></h2>
+          <p class="section-body" style="margin-bottom:32px;">
+            <span class="he">צלילה מקולוניה פירושה צלילה מהנקודה הדרומית ביותר של ישראל — פחות עומסים, אתרים יחסית בתולה, ואפשרות ייחודית לגשת לאתרי הים האדום המצרי.</span>
+            <span class="en">Diving from Colonia means diving from Israel's southernmost point — less crowds, relatively pristine sites, and a unique ability to access Egyptian Red Sea sites.</span>
+          </p>
+          <ul class="why-list">
+            <li class="why-item">
+              <span class="why-num">01</span>
+              <div class="why-text"><strong><span class="he">פחות עומסים מרכז אילת</span><span class="en">Less Crowded Than Central Eilat</span></strong><span class="he">אתרים שמורים עם ראות מקסימלית</span><span class="en">Preserved sites with maximum visibility</span></div>
+            </li>
+            <li class="why-item">
+              <span class="why-num">02</span>
+              <div class="why-text"><strong><span class="he">גישה לאתרים המצריים</span><span class="en">Access to Egyptian Sites</span></strong><span class="he">דרך טאבה, 5 דקות — עולם חדש לגמרי</span><span class="en">Via Taba, 5 minutes — a completely new world</span></div>
+            </li>
+            <li class="why-item">
+              <span class="why-num">03</span>
+              <div class="why-text"><strong><span class="he">צלילה והתארחות באותו מקום</span><span class="en">Dive and Stay in the Same Place</span></strong><span class="he">הצימר של קולוניה 5 דקות מהמים</span><span class="en">Colonia's room 5 minutes from the water</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASON -->
+  <section class="season">
+    <div class="season-inner">
+      <p class="section-eyebrow light" style="text-align:center;"><span class="he">עונות</span><span class="en">Seasons</span></p>
+      <h2 class="section-title light" style="text-align:center;"><span class="he">פתוח <em>כל השנה</em></span><span class="en">Open <em>Year Round</em></span></h2>
+      <p style="color:rgba(244,239,232,0.5);font-size:14px;text-align:center;line-height:1.7;font-weight:300;margin-bottom:0;">
+        <span class="he">ים סוף נוח לצלילה בכל עונות השנה. המים תמיד חמים, הראות תמיד מדהימה.</span>
+        <span class="en">The Red Sea is comfortable for diving all year. The water is always warm, the visibility always stunning.</span>
+      </p>
+      <div class="season-grid">
+        <div class="season-card">
+          <span class="season-label"><span class="he">ראות מיטבית</span><span class="en">Best Visibility</span></span>
+          <div class="season-val"><span class="he">אוקטובר — מאי</span><span class="en">Oct — May</span></div>
+        </div>
+        <div class="season-card">
+          <span class="season-label"><span class="he">טמפרטורת מים</span><span class="en">Water Temperature</span></span>
+          <div class="season-val">22 — 28°C</div>
+        </div>
+        <div class="season-card">
+          <span class="season-label"><span class="he">עונת פתיחה</span><span class="en">Open Season</span></span>
+          <div class="season-val"><span class="he">כל השנה</span><span class="en">All Year</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section class="booking-cta" id="booking-cta">
+    <div class="booking-inner">
+      <p class="section-eyebrow"><span class="he">הזמנה</span><span class="en">Booking</span></p>
+      <h2 class="section-title" style="margin-bottom:16px;"><span class="he">מוכנים <em>לצלול?</em></span><span class="en">Ready <em>to Dive?</em></span></h2>
+      <p class="section-body" style="max-width:420px;margin:0 auto 36px;text-align:center;">
+        <span class="he">צרו קשר ונתאם את הצלילה שלכם — לפי רמה, תאריך והעדפות.</span>
+        <span class="en">Contact us and we'll arrange your dive — by level, date, and preference.</span>
+      </p>
+      <a href="index.html#booking" class="btn-dark"><span class="he">הזמן צלילה</span><span class="en">Book a Dive</span></a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <p class="section-eyebrow"><span class="he">שאלות נפוצות</span><span class="en">FAQ</span></p>
+      <h2 class="section-title"><span class="he">שאלות <em>ותשובות</em></span><span class="en">Questions <em>&amp; Answers</em></span></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span><span class="he">האם צריך ניסיון כדי לצלול?</span><span class="en">Do I need experience to dive?</span></span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner"><span class="he">לא. אנחנו מציעים חוויית צלילה ראשונה למתחילים לחלוטין, ללא כל ניסיון קודם. המדריכים ילוו אתכם בכל שלב.</span><span class="en">No. We offer a first dive experience for complete beginners, with no prior experience needed. Our guides will accompany you every step of the way.</span></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span><span class="he">האם אפשר לגשת לאתרי הצלילה המצריים?</span><span class="en">Can we access Egyptian dive sites?</span></span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner"><span class="he">כן. מעבר טאבה נמצא 5 דקות נסיעה מקולוניה. דרכו יש גישה לאתרי הים האדום המצרי — חוויה שונה לחלוטין ומומלצת מאוד.</span><span class="en">Yes. Taba crossing is 5 minutes from Colonia. Through it there's access to Egyptian Red Sea sites — a completely different and highly recommended experience.</span></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span><span class="he">האם ניתן לשלב צלילה עם לינה בצימר?</span><span class="en">Can I combine diving with a room stay?</span></span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner"><span class="he">בהחלט. זו החוויה האידיאלית — ישנים בצימר עם נוף לים סוף, ומצללים בבוקר. ניתן לתאם חבילה משולבת.</span><span class="en">Absolutely. That's the ideal experience — sleeping in the room with a Red Sea view, and diving in the morning. A combined package can be arranged.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- CONTACT -->
+  <section style="background:var(--cream,#F0EAE0);padding:80px 0;" id="contact-sub">
+    <div style="max-width:1120px;margin:0 auto;padding:0 56px;">
+      <p style="font-size:10px;font-weight:500;letter-spacing:5px;text-transform:uppercase;color:#8C4A28;margin-bottom:12px;">
+        <span class="he">צרו קשר</span><span class="en">Contact</span>
+      </p>
+      <h2 style="font-family:Cormorant Garamond,serif;font-size:clamp(32px,4vw,50px);font-weight:300;color:#3E2C20;margin-bottom:40px;">
+        <span class="he">דברו <em>איתנו</em></span><span class="en">Get in <em>Touch</em></span>
+      </h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#D6C4A8;">
+        <a href="tel:+972537764807" style="background:#F8F4EE;padding:36px 32px;text-decoration:none;display:block;transition:background 0.25s;">
+          <span style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8C4A28;margin-bottom:12px;display:block;">
+            <span class="he">טלפון</span><span class="en">Phone</span>
+          </span>
+          <div style="font-size:17px;color:#3E2C20;font-weight:400;">+972-53-776-4807</div>
+          <div style="font-size:12px;color:#9A6A44;margin-top:6px;font-weight:300;"><span class="he">שיחה ישירה</span><span class="en">Direct call</span></div>
+        </a>
+        <a href="https://wa.me/972537764807" style="background:#F8F4EE;padding:36px 32px;text-decoration:none;display:block;transition:background 0.25s;">
+          <span style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8C4A28;margin-bottom:12px;display:block;">WhatsApp</span>
+          <div style="font-size:17px;color:#3E2C20;font-weight:400;"><span class="he">שלח הודעה</span><span class="en">Send a message</span></div>
+          <div style="font-size:12px;color:#9A6A44;margin-top:6px;font-weight:300;"><span class="he">זמין 24/7</span><span class="en">Available 24/7</span></div>
+        </a>
+        <a href="https://maps.app.goo.gl/pSJWfZtYGJY27FjQ9" target="_blank" style="background:#F8F4EE;padding:36px 32px;text-decoration:none;display:block;transition:background 0.25s;">
+          <span style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8C4A28;margin-bottom:12px;display:block;"><span class="he">מיקום</span><span class="en">Location</span></span>
+          <div style="font-size:17px;color:#3E2C20;font-weight:400;"><span class="he">דרך מצריים 160, אילת 8804346</span><span class="en">Derech Mitzraim 160, Eilat 8804346</span></div>
+          <div style="font-size:12px;color:#9A6A44;margin-top:6px;font-weight:300;">Google Maps</div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <span><a href="index.html"><span class="he">בחזרה לדף הבית</span><span class="en">Back to Home</span></a></span>
+    <span><span class="he">מועדון הצלילה - קולוניה אילת</span><span class="en">Dive Club - Colonia Eilat</span></span>
+    <span>© 2025 Colonia Rest House</span>
+  </footer>
+
+  <!-- STICKY CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#booking-cta"><span class="he">הזמן עכשיו</span><span class="en">Book Now</span></a>
+  </div>
+
+  <script>
+    function setLang(l) {
+      document.body.classList.toggle('lang-en', l==='en');
+      document.getElementById('btn-he').classList.toggle('active', l==='he');
+      document.getElementById('btn-en').classList.toggle('active', l==='en');
+      document.documentElement.setAttribute('dir', l==='en' ? 'ltr' : 'rtl');
+      document.documentElement.setAttribute('lang', l);
+    }
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+      document.getElementById('stickyCta').classList.toggle('show', window.scrollY > 200);
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+    function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.floor(current).toLocaleString() + suffix;
+        if (current >= target) clearInterval(timer);
+      }, 16);
+    }
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !e.target.dataset.animated) {
+          e.target.dataset.animated = '1';
+          animateCounter(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+  </script>
+</body>
+</html>

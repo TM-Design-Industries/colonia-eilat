@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>גן האירועים | Colonia Rest House Eilat</title>
+  <meta name="description" content="גן האירועים של קולוניה אילת — חתונות, אירועי חברה ואירועים פרטיים בגן ייחודי ברקע הרי אילת." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #EDE8DF; --warm: #E2D8C8; --sand: #D4C4A4; --tan: #C8A882;
+      --brown: #C07848; --deep: #B86030; --earth: #6A5048; --rust: #B06838;
+      --rust2: #C87848; --dark: #524038; --white: #F5F1EB;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Heebo', sans-serif; background: var(--white); color: var(--earth); overflow-x: hidden; font-weight: 300; }
+    html, body { margin: 0; padding: 0; overflow-x: hidden; }
+    section, footer { width: 100%; overflow-x: hidden; }
+    img { max-width: 100%; }
+
+    /* LANG */
+    .lang-switch { position: fixed; top: 20px; left: 24px; z-index: 1000; display: flex; gap: 4px; }
+    .lang-btn { background: rgba(245,241,235,0.7); border: 1px solid var(--sand); color: var(--brown); border-radius: 3px; padding: 5px 12px; font-size: 11px; font-weight: 500; cursor: pointer; letter-spacing: 1px; font-family: 'Heebo', sans-serif; transition: all 0.2s; }
+    .lang-btn.active, .lang-btn:hover { background: var(--earth); color: var(--cream); border-color: var(--earth); }
+
+    /* NAV */
+    nav { position: fixed; top: 0; width: 100%; z-index: 900; padding: 22px 48px; display: flex; align-items: center; justify-content: space-between; transition: all 0.4s; }
+    nav.scrolled { background: rgba(250,250,248,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--warm); padding: 16px 48px; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--earth); letter-spacing: 6px; text-decoration: none; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--brown); text-decoration: none; font-size: 12px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--earth); }
+    .nav-cta { border: 1px solid var(--tan) !important; padding: 8px 20px; border-radius: 2px; color: var(--earth) !important; }
+    .nav-cta:hover { background: var(--earth) !important; border-color: var(--earth) !important; color: var(--cream) !important; }
+
+    /* HERO */
+    .hero { height: 100vh; min-height: 700px; position: relative; display: flex; align-items: flex-end; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: url('garden-view.jpg') center 55% / cover no-repeat; }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(245,241,235,0.55); }
+    .hero-content { position: relative; z-index: 2; padding: 0 64px 72px; color: var(--earth); width: 100%; }
+    .hero-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--rust); margin-bottom: 16px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 8vw, 88px); font-weight: 300; line-height: 0.95; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 20px; color: var(--earth); }
+    .hero h1 em { font-style: italic; font-weight: 300; display: block; font-size: 0.5em; letter-spacing: 12px; opacity: 0.65; margin-top: 8px; }
+    .hero-desc { font-size: 14px; font-weight: 300; color: var(--brown); letter-spacing: 1px; line-height: 1.7; max-width: 480px; margin-bottom: 36px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* BUTTONS */
+    .btn-primary { background: transparent; color: var(--earth); border: 1px solid var(--tan); padding: 13px 32px; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.25s; display: inline-block; font-family: 'Heebo', sans-serif; border-radius: 2px; }
+    .btn-primary:hover { background: var(--earth); color: var(--cream); border-color: var(--earth); }
+    .btn-primary.filled { background: var(--rust); border-color: var(--rust); color: var(--white); }
+    .btn-primary.filled:hover { background: var(--rust2); border-color: var(--rust2); }
+    .btn-dark { background: var(--earth); color: var(--cream); border: 1px solid var(--earth); padding: 13px 32px; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.25s; display: inline-block; font-family: 'Heebo', sans-serif; border-radius: 2px; }
+    .btn-dark:hover { background: var(--rust); border-color: var(--rust); }
+
+    /* SECTIONS */
+    section { padding: 100px 48px; }
+    .container { max-width: 1140px; margin: 0 auto; }
+    .section-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
+    .section-eyebrow.light { color: var(--tan); }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 300; line-height: 1.1; margin-bottom: 20px; color: var(--earth); }
+    .section-title.light { color: var(--cream); }
+    .section-title em { font-style: italic; }
+    .section-body { font-size: 15px; line-height: 1.85; color: var(--brown); font-weight: 300; max-width: 560px; }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: var(--warm); margin: 0 48px; }
+
+    /* STATS STRIP */
+    .stats-strip { background: var(--earth); padding: 56px 48px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; background: rgba(255,255,255,0.08); }
+    .stat-card { background: var(--earth); padding: 40px 28px; text-align: center; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px,6vw,64px); font-weight: 300; color: var(--cream); letter-spacing: 2px; display: block; line-height: 1; }
+    .stat-label { font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: rgba(244,239,232,0.4); margin-top: 10px; display: block; }
+
+    /* INCLUDED */
+    .included { background: var(--cream); }
+    .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 56px; }
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .checklist-item { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--warm); cursor: default; }
+    .checklist-item:last-child { border-bottom: none; }
+    .check-icon { width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--tan); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; transition: all 0.4s; }
+    .check-icon svg { width: 10px; height: 10px; stroke: var(--rust); stroke-width: 2.5; fill: none; opacity: 0; transition: opacity 0.3s; }
+    .checklist-item.visible .check-icon { background: var(--rust); border-color: var(--rust); }
+    .checklist-item.visible .check-icon svg { opacity: 1; stroke: var(--white); }
+    .check-text strong { display: block; font-size: 14px; font-weight: 500; color: var(--earth); margin-bottom: 3px; }
+    .check-text span { font-size: 12px; color: var(--brown); font-weight: 300; }
+
+    /* EVENT TYPES */
+    .event-types { background: var(--warm); }
+    .types-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 2px; background: var(--sand); margin-top: 48px; }
+    .type-card { background: var(--warm); padding: 36px 24px; text-align: center; transition: background 0.3s; }
+    .type-card:hover { background: var(--earth); }
+    .type-num { font-family: 'Cormorant Garamond', serif; font-size: 11px; color: var(--rust); letter-spacing: 2px; display: block; margin-bottom: 16px; }
+    .type-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--earth); line-height: 1.2; transition: color 0.3s; }
+    .type-card:hover .type-title { color: var(--cream); }
+    .type-sub { font-size: 11px; color: var(--brown); margin-top: 8px; font-weight: 300; letter-spacing: 0.5px; transition: color 0.3s; }
+    .type-card:hover .type-sub { color: rgba(244,239,232,0.5); }
+
+    /* WHY */
+    .why { background: var(--earth); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .why-img { height: 480px; overflow: hidden; }
+    .why-img img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.85); }
+    .why-list { list-style: none; display: flex; flex-direction: column; gap: 28px; margin-top: 36px; }
+    .why-item { display: flex; gap: 20px; align-items: flex-start; }
+    .why-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--rust2); letter-spacing: 1px; flex-shrink: 0; min-width: 22px; margin-top: 2px; }
+    .why-text strong { display: block; font-size: 14px; font-weight: 500; color: var(--cream); margin-bottom: 4px; }
+    .why-text span { font-size: 12px; color: rgba(244,239,232,0.45); font-weight: 300; }
+
+    /* TESTIMONIAL */
+    .testimonial { background: var(--cream); padding: 80px 48px; }
+    .testimonial-inner { max-width: 680px; margin: 0 auto; text-align: center; position: relative; }
+    .quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 140px; line-height: 1; color: var(--sand); position: absolute; top: -28px; right: -20px; font-weight: 300; user-select: none; }
+    body.lang-en .quote-mark { right: auto; left: -20px; }
+    .testimonial-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,3vw,28px); font-weight: 300; font-style: italic; line-height: 1.65; color: var(--earth); position: relative; z-index: 1; }
+    .testimonial-author { margin-top: 28px; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--rust); font-weight: 500; }
+    .testimonial-divider { width: 40px; height: 1px; background: var(--tan); margin: 20px auto; }
+
+    /* GALLERY STRIP */
+    .photo-strip { background: var(--warm); padding: 60px 0; }
+    .strip-header { padding: 0 48px 28px; }
+    .strip-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 0 48px 16px; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
+    .strip-scroll::-webkit-scrollbar { display: none; }
+    .strip-photo { flex-shrink: 0; width: 320px; height: 220px; overflow: hidden; border-radius: 1px; }
+    .strip-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .strip-photo:hover img { transform: scale(1.04); }
+
+    /* PRICING CTA */
+    .pricing-cta { background: var(--dark); padding: 80px 48px; text-align: center; }
+    .pricing-inner { max-width: 600px; margin: 0 auto; }
+    .pricing-note { font-size: 12px; letter-spacing: 2px; color: rgba(244,239,232,0.35); margin-top: 16px; font-weight: 300; }
+
+    /* FAQ */
+    .faq { background: var(--white); }
+    .faq-list { margin-top: 48px; max-width: 720px; }
+    .faq-item { border-bottom: 1px solid var(--warm); }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; cursor: pointer; font-size: 15px; font-weight: 400; color: var(--earth); letter-spacing: 0.3px; gap: 20px; }
+    .faq-q span { flex: 1; }
+    .faq-icon { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--sand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s; color: var(--rust); font-size: 16px; line-height: 1; }
+    .faq-item.open .faq-icon { background: var(--earth); border-color: var(--earth); color: var(--cream); transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+    .faq-item.open .faq-a { max-height: 200px; }
+    .faq-a-inner { padding: 0 0 20px; font-size: 14px; color: var(--brown); line-height: 1.85; font-weight: 300; max-width: 600px; }
+
+    /* STICKY CTA */
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 800; padding: 14px 20px; background: var(--earth); display: none; justify-content: center; border-top: 1px solid rgba(255,255,255,0.1); }
+    .sticky-cta a { color: var(--cream); text-decoration: none; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; font-family: 'Heebo', sans-serif; }
+    .sticky-cta.show { display: flex; }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.25); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; font-size: 11px; letter-spacing: 1px; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    footer a:hover { color: var(--cream); }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      nav { padding: 16px 20px; }
+      nav.scrolled { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .lang-switch { top: 16px; left: 16px; }
+      .hero-content { padding: 0 20px 56px; }
+      section { padding: 64px 20px; }
+      .stats-strip { padding: 48px 20px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .included-grid { grid-template-columns: 1fr; gap: 36px; }
+      .types-grid { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr; gap: 36px; }
+      .why-img { height: 260px; }
+      .testimonial { padding: 60px 20px; }
+      .quote-mark { font-size: 80px; right: -8px; top: -16px; }
+      body.lang-en .quote-mark { left: -8px; }
+      .strip-scroll { padding: 0 20px 16px; }
+      .strip-header { padding: 0 20px 28px; }
+      .strip-photo { width: 240px; height: 160px; }
+      .pricing-cta { padding: 60px 20px; }
+      .faq { padding: 64px 20px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px 20px; }
+      .divider { margin: 0; }
+      .types-grid { grid-template-columns: 1fr; }
+    }
+
+    /* LANG */
+    .he { display: block; } .en { display: none; }
+    body.lang-en .he { display: none; } body.lang-en .en { display: block; }
+    body.lang-en { direction: ltr; }
+    span.he { display: inline; } span.en { display: none; }
+    body.lang-en span.he { display: none; } body.lang-en span.en { display: inline; }
+  </style>
+</head>
+<body>
+
+  <div class="lang-switch">
+    <button class="lang-btn active" id="btn-he" onclick="setLang('he')">HE</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Colonia</a>
+    <ul class="nav-links">
+      <li><a href="events.html"><span class="he">גן האירועים</span><span class="en">Events Garden</span></a></li>
+      <li><a href="shows.html"><span class="he">הופעות</span><span class="en">Shows</span></a></li>
+      <li><a href="room.html"><span class="he">הצימר</span><span class="en">The Room</span></a></li>
+      <li><a href="diving.html"><span class="he">צלילה</span><span class="en">Diving</span></a></li>
+      <li><a href="#contact" class="nav-cta"><span class="he">הזמנה</span><span class="en">Book</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home" style="padding:0;">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow"><span class="he">השטח הפרטי הדרומי ביותר בישראל</span><span class="en">Israel's Southernmost Private Land</span></p>
+      <h1>
+        <span class="he">גן האירועים</span><span class="en">Events Garden</span>
+        <em><span class="he">The Events Garden</span><span class="en">גן האירועים</span></em>
+      </h1>
+      <p class="hero-desc">
+        <span class="he">חתונות, אירועי חברה ואירועים פרטיים בגן ייחודי של 2,000 מ"ר, ברקע הרי אילת ונוף ים סוף.</span>
+        <span class="en">Weddings, corporate and private events in a unique 2,000 sqm garden, against the backdrop of Eilat's mountains and Red Sea views.</span>
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary filled"><span class="he">לקבלת הצעת מחיר</span><span class="en">Get a Quote</span></a>
+        <a href="#included" class="btn-primary"><span class="he">מה כלול</span><span class="en">What's Included</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num" data-target="500">0</span>
+          <span class="stat-label"><span class="he">אורחים מקסימום</span><span class="en">Max Guests</span></span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="2000" data-suffix="m²">0</span>
+          <span class="stat-label"><span class="he">שטח הגן</span><span class="en">Garden Area</span></span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="1">0</span>
+          <span class="stat-label"><span class="he">במת הופעות חיצונית</span><span class="en">Outdoor Stage</span></span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="360" data-suffix="°">0</span>
+          <span class="stat-label"><span class="he">נוף פנורמי</span><span class="en">Panoramic View</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INCLUDED -->
+  <section class="included" id="included">
+    <div class="container">
+      <p class="section-eyebrow"><span class="he">מה כלול</span><span class="en">What's Included</span></p>
+      <h2 class="section-title"><span class="he">הכל כדי ליצור <em>אירוע מושלם</em></span><span class="en">Everything to Create a <em>Perfect Event</em></span></h2>
+      <div class="included-grid">
+        <ul class="checklist" id="checklist-left">
+          <li class="checklist-item">
+            <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="check-text"><strong><span class="he">במה + מערכת הגברה מקצועית</span><span class="en">Stage + Professional PA System</span></strong><span class="he">ציוד מוזיקה מלא לאירוע בכל גודל</span><span class="en">Full sound equipment for any event size</span></div>
+          </li>
+          <li class="checklist-item">
+            <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="check-text"><strong><span class="he">גן דשא טבעי</span><span class="en">Natural Grass Garden</span></strong><span class="he">2,000 מ"ר של דשא ירוק ומבני עץ</span><span class="en">2,000 sqm of green lawn and wood structures</span></div>
+          </li>
+          <li class="checklist-item">
+            <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="check-text"><strong><span class="he">מבני עץ טבעיים</span><span class="en">Natural Wood Structures</span></strong><span class="he">אדריכלות ייחודית שמשלבת טבע ואסתטיקה</span><span class="en">Unique architecture blending nature and design</span></div>
+          </li>
+          <li class="checklist-item">
+            <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="check-text"><strong><span class="he">הגדרת שולחנות וכיסאות</span><span class="en">Tables & Chairs Setup</span></strong><span class="he">ריהוט לאירוע — הכל כלול ומותאם</span><span class="en">Event furniture — all included and customized</span></div>
+          </li>
+        </ul>
+        <ul class="checklist" id="checklist-right">
+          <li class="checklist-item">
+            <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="check-text"><strong><span class="he">חניה בשפע</span><span class="en">Ample Parking</span></strong><span class="he">כניסה נוחה וחניה לכל האורחים</span><span class="en">Easy access and parking for all guests</span></div>
+          </li>
+          <li class="checklist-item">
+            <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="check-text"><strong><span class="he">אזור הגדרת בר מלא</span><span class="en">Full Bar Setup Area</span></strong><span class="he">תשתית בר מוכנה להתאמה אישית</span><span class="en">Ready bar infrastructure for customization</span></div>
+          </li>
+          <li class="checklist-item">
+            <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="check-text"><strong><span class="he">חדר כלה / חדר ירוק</span><span class="en">Bridal Suite / Green Room</span></strong><span class="he">חדר פרטי לזוג או לאמנים</span><span class="en">Private room for the couple or performers</span></div>
+          </li>
+          <li class="checklist-item">
+            <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+            <div class="check-text"><strong><span class="he">תאורה מקצועית</span><span class="en">Professional Lighting</span></strong><span class="he">תאורת אירוע מלאה ואווירתית</span><span class="en">Full atmospheric and event lighting</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EVENT TYPES -->
+  <section class="event-types">
+    <div class="container">
+      <p class="section-eyebrow"><span class="he">סוגי אירועים</span><span class="en">Event Types</span></p>
+      <h2 class="section-title"><span class="he">מה עושים <em>בקולוניה</em></span><span class="en">What Happens <em>at Colonia</em></span></h2>
+      <div class="types-grid">
+        <div class="type-card">
+          <span class="type-num">01</span>
+          <div class="type-title"><span class="he">חתונות</span><span class="en">Weddings</span></div>
+          <p class="type-sub"><span class="he">החתונה המושלמת ברקע ים סוף</span><span class="en">The perfect wedding by the Red Sea</span></p>
+        </div>
+        <div class="type-card">
+          <span class="type-num">02</span>
+          <div class="type-title"><span class="he">אירועים פרטיים</span><span class="en">Private Events</span></div>
+          <p class="type-sub"><span class="he">מסיבות ואירועים לכל סיבה</span><span class="en">Parties and events for any occasion</span></p>
+        </div>
+        <div class="type-card">
+          <span class="type-num">03</span>
+          <div class="type-title"><span class="he">אירועי חברה</span><span class="en">Corporate Events</span></div>
+          <p class="type-sub"><span class="he">אירועי קצה שהצוות יזכור</span><span class="en">Team events they'll remember forever</span></p>
+        </div>
+        <div class="type-card">
+          <span class="type-num">04</span>
+          <div class="type-title"><span class="he">ימי הולדת</span><span class="en">Birthdays</span></div>
+          <p class="type-sub"><span class="he">חגיגות גדולות ואינטימיות</span><span class="en">Grand and intimate celebrations</span></p>
+        </div>
+        <div class="type-card">
+          <span class="type-num">05</span>
+          <div class="type-title"><span class="he">בר / בת מצווה</span><span class="en">Bar / Bat Mitzvah</span></div>
+          <p class="type-sub"><span class="he">אבן דרך בסביבה בלתי נשכחת</span><span class="en">A milestone in an unforgettable setting</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY COLONIA -->
+  <section class="why">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-img">
+          <img src="nightgarden1.jpg" alt="Colonia garden at night" />
+        </div>
+        <div>
+          <p class="section-eyebrow light"><span class="he">למה קולוניה</span><span class="en">Why Colonia</span></p>
+          <h2 class="section-title light"><span class="he">אין עוד מקום <em>כזה</em></span><span class="en">There Is No Place <em>Like This</em></span></h2>
+          <ul class="why-list">
+            <li class="why-item">
+              <span class="why-num">01</span>
+              <div class="why-text"><strong><span class="he">המקום הדרומי ביותר בישראל</span><span class="en">Israel's Southernmost Venue</span></strong><span class="he">קצה הארץ — נקודה שאין עוד כמוה</span><span class="en">The edge of the country — a point unlike any other</span></div>
+            </li>
+            <li class="why-item">
+              <span class="why-num">02</span>
+              <div class="why-text"><strong><span class="he">רקע של הרים ים</span><span class="en">Mountain and Sea Backdrop</span></strong><span class="he">הרי אילת האדומים מאחור, ים סוף מלפנים</span><span class="en">Red Eilat mountains behind, Red Sea ahead</span></div>
+            </li>
+            <li class="why-item">
+              <span class="why-num">03</span>
+              <div class="why-text"><strong><span class="he">שקיעה מערבה מעל ההרים</span><span class="en">Sunset West Over the Mountains</span></strong><span class="he">שקיעה דרמטית שצובעת את ההרים בכתום ואדום</span><span class="en">Dramatic sunset painting the mountains in orange and red</span></div>
+            </li>
+            <li class="why-item">
+              <span class="why-num">04</span>
+              <div class="why-text"><strong><span class="he">אווירת שאנטי ייחודית</span><span class="en">Unique Shanti Atmosphere</span></strong><span class="he">אנרגיה שקשה למצוא — שקטה, עמוקה, בלתי נשכחת</span><span class="en">Hard-to-find energy — calm, deep, unforgettable</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="testimonial-inner">
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text">
+        <span class="he">האווירה במקום הזה לא ניתנת לתיאור. החתונה שלנו היתה חלום שלא היינו מאמינות שיתגשם כל כך מושלם. הגן, האורות, ההרים ברקע — הכל פשוט השתלב.</span>
+        <span class="en">The atmosphere of this place is beyond words. Our wedding was a dream we never believed could come together so perfectly. The garden, the lights, the mountains — everything just clicked.</span>
+      </p>
+      <div class="testimonial-divider"></div>
+      <p class="testimonial-author"><span class="he">נועה ואיתי, חתונה 2024</span><span class="en">Noa & Itai, Wedding 2024</span></p>
+    </div>
+  </section>
+
+  <!-- GALLERY STRIP -->
+  <div class="photo-strip">
+    <div class="strip-header">
+      <p class="section-eyebrow"><span class="he">גלריה</span><span class="en">Gallery</span></p>
+      <h3 class="section-title" style="margin-bottom:0;font-size:clamp(24px,3vw,36px);"><span class="he">הגן <em>בתמונות</em></span><span class="en">The Garden <em>in Images</em></span></h3>
+    </div>
+    <div class="strip-scroll">
+      <div class="strip-photo"><img src="nightgarden1.jpg" alt="Night garden" /></div>
+      <div class="strip-photo"><img src="nightgarden3.jpg" alt="Garden night" /></div>
+      <div class="strip-photo"><img src="stage.jpg" alt="Stage" /></div>
+      <div class="strip-photo"><img src="garden5.jpg" alt="Garden" /></div>
+      <div class="strip-photo"><img src="garden4.jpg" alt="Sea view garden" /></div>
+      <div class="strip-photo"><img src="garden-view.jpg" alt="Garden panorama" /></div>
+    </div>
+  </div>
+
+  <!-- PRICING CTA -->
+  <section class="pricing-cta" id="contact">
+    <div class="pricing-inner">
+      <p class="section-eyebrow light"><span class="he">מחיר ופרטים</span><span class="en">Pricing & Details</span></p>
+      <h2 class="section-title light" style="margin-bottom:28px;"><span class="he">מוכנים לתכנן <em>את האירוע?</em></span><span class="en">Ready to Plan <em>Your Event?</em></span></h2>
+      <p style="color:rgba(244,239,232,0.5);font-size:14px;margin-bottom:36px;line-height:1.7;font-weight:300;">
+        <span class="he">כל אירוע הוא ייחודי. נשמח לשמוע על החזון שלכם ולהתאים הצעה.</span>
+        <span class="en">Every event is unique. We'd love to hear your vision and tailor a quote.</span>
+      </p>
+      <a href="index.html#booking" class="btn-primary" style="border-color:rgba(244,239,232,0.3);color:rgba(244,239,232,0.8);">
+        <span class="he">לקבלת הצעת מחיר</span><span class="en">Get a Quote</span>
+      </a>
+      <p class="pricing-note"><span class="he">ניצור קשר תוך 24 שעות</span><span class="en">We'll be in touch within 24 hours</span></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <p class="section-eyebrow"><span class="he">שאלות נפוצות</span><span class="en">FAQ</span></p>
+      <h2 class="section-title"><span class="he">שאלות <em>ותשובות</em></span><span class="en">Questions <em>&amp; Answers</em></span></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span><span class="he">כמה אורחים ניתן לארח בגן?</span><span class="en">How many guests can the garden host?</span></span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner"><span class="he">הגן יכול לארח עד 500 אורחים. עם 2,000 מ"ר של שטח פתוח, יש גמישות לפורמטים שונים — ישיבה מלאה, עמידה, או שילוב.</span><span class="en">The garden can host up to 500 guests. With 2,000 sqm of open space, there's flexibility for various formats — full seating, standing, or a mix.</span></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span><span class="he">האם ניתן לארגן קייטרינג דרך קולוניה?</span><span class="en">Can catering be arranged through Colonia?</span></span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner"><span class="he">אנו עובדים עם שותפי קייטרינג מהאזור ויכולים להמליץ. ניתן גם להביא קייטרינג עצמאי — יש לנו תשתית בר ומטבח מלאה.</span><span class="en">We work with local catering partners and can make recommendations. You can also bring independent catering — we have full bar and kitchen infrastructure.</span></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span><span class="he">מה לגבי לינה לזוג ולאורחים?</span><span class="en">What about accommodation for the couple and guests?</span></span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner"><span class="he">יש בקולוניה צימר אחד בלבד — לפרטיות מוחלטת לזוג. לאורחים, אילת סמוכה ומציעה מגוון רחב של אפשרויות לינה.</span><span class="en">Colonia has one private room — for the couple's complete privacy. For guests, Eilat is nearby with a wide range of accommodation options.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  
+  <!-- CONTACT -->
+  <section style="background:var(--cream,#F0EAE0);padding:80px 0;" id="contact-sub">
+    <div style="max-width:1120px;margin:0 auto;padding:0 56px;">
+      <p style="font-size:10px;font-weight:500;letter-spacing:5px;text-transform:uppercase;color:#8C4A28;margin-bottom:12px;">
+        <span class="he">צרו קשר</span><span class="en">Contact</span>
+      </p>
+      <h2 style="font-family:Cormorant Garamond,serif;font-size:clamp(32px,4vw,50px);font-weight:300;color:#3E2C20;margin-bottom:40px;">
+        <span class="he">דברו <em>איתנו</em></span><span class="en">Get in <em>Touch</em></span>
+      </h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#D6C4A8;">
+        <a href="tel:+972537764807" style="background:#F8F4EE;padding:36px 32px;text-decoration:none;display:block;transition:background 0.25s;">
+          <span style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8C4A28;margin-bottom:12px;display:block;">
+            <span class="he">טלפון</span><span class="en">Phone</span>
+          </span>
+          <div style="font-size:17px;color:#3E2C20;font-weight:400;">+972-53-776-4807</div>
+          <div style="font-size:12px;color:#9A6A44;margin-top:6px;font-weight:300;"><span class="he">שיחה ישירה</span><span class="en">Direct call</span></div>
+        </a>
+        <a href="https://wa.me/972537764807" style="background:#F8F4EE;padding:36px 32px;text-decoration:none;display:block;transition:background 0.25s;">
+          <span style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8C4A28;margin-bottom:12px;display:block;">WhatsApp</span>
+          <div style="font-size:17px;color:#3E2C20;font-weight:400;"><span class="he">שלח הודעה</span><span class="en">Send a message</span></div>
+          <div style="font-size:12px;color:#9A6A44;margin-top:6px;font-weight:300;"><span class="he">זמין 24/7</span><span class="en">Available 24/7</span></div>
+        </a>
+        <a href="https://maps.app.goo.gl/pSJWfZtYGJY27FjQ9" target="_blank" style="background:#F8F4EE;padding:36px 32px;text-decoration:none;display:block;transition:background 0.25s;">
+          <span style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#8C4A28;margin-bottom:12px;display:block;"><span class="he">מיקום</span><span class="en">Location</span></span>
+          <div style="font-size:17px;color:#3E2C20;font-weight:400;"><span class="he">דרך מצריים 160, אילת 8804346</span><span class="en">Derech Mitzraim 160, Eilat 8804346</span></div>
+          <div style="font-size:12px;color:#9A6A44;margin-top:6px;font-weight:300;">Google Maps</div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <span><a href="index.html"><span class="he">בחזרה לדף הבית</span><span class="en">Back to Home</span></a></span>
+    <span><span class="he">גן האירועים - קולוניה אילת</span><span class="en">Events Garden - Colonia Eilat</span></span>
+    <span>© 2025 Colonia Rest House</span>
+  </footer>
+
+  <!-- STICKY CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#contact"><span class="he">הזמן עכשיו</span><span class="en">Book Now</span></a>
+  </div>
+
+  <script>
+    function setLang(l) {
+      document.body.classList.toggle('lang-en', l==='en');
+      document.getElementById('btn-he').classList.toggle('active', l==='he');
+      document.getElementById('btn-en').classList.toggle('active', l==='en');
+      document.documentElement.setAttribute('dir', l==='en' ? 'ltr' : 'rtl');
+      document.documentElement.setAttribute('lang', l);
+    }
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+      document.getElementById('stickyCta').classList.toggle('show', window.scrollY > 200);
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+    function toggleFaq(el) {
+      el.parentElement.classList.toggle('open');
+    }
+
+    // Number counter animation
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.floor(current).toLocaleString() + suffix;
+        if (current >= target) clearInterval(timer);
+      }, 16);
+    }
+
+    // Intersection observer for counters
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !e.target.dataset.animated) {
+          e.target.dataset.animated = '1';
+          animateCounter(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+
+    // Checklist animation
+    const checkObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 120);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.checklist-item').forEach(el => checkObserver.observe(el));
+  </script>
+</body>
+</html>
